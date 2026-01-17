@@ -1,13 +1,13 @@
 import React from "react";
 import { useState } from "react";
 
-const Login = (props) => {
+const Login = ({ handleLogin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const submitHandler = (e) => {
     e.preventDefault();
-    handleLogin(email,password)
+    handleLogin(email, password);
     console.log("Email is ", email);
     console.log("Password is ", password);
 
@@ -24,7 +24,8 @@ const Login = (props) => {
           }}
           className="flex flex-col items-center justify-center gap-4"
         >
-          <input id="deep"
+          <input
+            id="deep"
             value={email}
             onChange={(e) => {
               setEmail(e.target.value);
@@ -34,7 +35,8 @@ const Login = (props) => {
             type="text"
             placeholder="Enter Your Email.."
           />
-          <input id="password"
+          <input
+            id="password"
             value={password}
             onChange={(e) => {
               setPassword(e.target.value);
@@ -43,10 +45,12 @@ const Login = (props) => {
             className="outline-none bg-transparent border-2 border-emerald-600 text-xl py-3 px-5 rounded-full placeholder:text-gray-400"
             type="password"
             placeholder="Enter password"
+            autoComplete="current-password"
           />
           <button className="mt-6 w-67.5 py-3 text-lg bg-emerald-600 text-white rounded-full">
             Log in
           </button>
+          ś
         </form>
       </div>
     </div>
